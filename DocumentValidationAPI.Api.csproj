@@ -13,20 +13,18 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="9.0.2" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.11" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DocumentValidationAPI.Application\DocumentValidationAPI.Application.csproj" />
     <ProjectReference Include="..\DocumentValidationAPI.Infrastructure\DocumentValidationAPI.Infrastructure.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\Responses\" />
-    <Folder Include="Contracts\Requests\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Filters\" />
-    <Folder Include="Middleware\" />
-    <Folder Include="Configuration\" />
-    <Folder Include="Lambda\" />
   </ItemGroup>
 </Project>

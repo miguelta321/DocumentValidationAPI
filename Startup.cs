@@ -1,23 +1,28 @@
+using DocumentValidationAPI.Application.Configuration;
+using DocumentValidationAPI.Infrastructure.Configuration;
+using DotNetEnv;
 using Microsoft.OpenApi;
-using System;
 
 namespace DocumentValidationAPI;
 
 public class Startup
 {
-    public Startup(IConfiguration configuration)    
-    {
-        Configuration = configuration;
-    }
-
     public IConfiguration Configuration { get; }
+
+    public Startup(IConfiguration configuration) => Configuration = configuration;
 
     // Add services to the container
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddControllers();
+        services.AddApplication();
+        services.AddInfrastructure(Configuration);
 
-        // Swagger / OpenAPI
+        services.AddControllers(options =>
+        {
+            options.Filters.Add<ValidationExceptionFilter>();
+        });
+
+        // Swagger
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {
