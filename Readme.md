@@ -178,6 +178,18 @@ DocumentValidationAPI.Api::DocumentValidationAPI.Api.LambdaEntryPoint::FunctionH
 
 ---
 
+# ⚠️ Important Testing Warning
+
+Por motivos de pruebas, en la base de datos solo están disponibles los siguientes registros.:
+
+- **CompanyId:** `B8A4C5C9-7C2E-4C3A-9E2D-9D7D1F6F2E81`
+- **EntityId:** `F3E1A2B7-91C4-4D8A-8F3F-2DB1E6B4C92E`
+- **Entity Type:** `vehicle`
+
+Cualquier solicitud que utilice valores diferentes a estos dará lugar a errores de validación durante las pruebas en el entorno correspondiente.
+
+---
+
 # 🧪 9. Ejemplos de Requests
 
 Para facilidad de pruebas se puede cambiar el ambiente local por el desplegado.
