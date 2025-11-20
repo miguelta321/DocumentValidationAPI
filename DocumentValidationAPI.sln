@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Api", "DocumentValidationAPI.Api.csproj", "{9F775845-0356-3BB2-1AAA-AAC43F34EA4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Api", "DocumentValidationAPI.Api\DocumentValidationAPI.Api.csproj", "{9F775845-0356-3BB2-1AAA-AAC43F34EA4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Domain", "..\DocumentValidationAPI.Domain\DocumentValidationAPI.Domain.csproj", "{2F537731-76C1-4D19-BC63-10E7A61C8379}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Domain", "DocumentValidationAPI.Domain\DocumentValidationAPI.Domain.csproj", "{2F537731-76C1-4D19-BC63-10E7A61C8379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Application", "..\DocumentValidationAPI.Application\DocumentValidationAPI.Application.csproj", "{D8979567-DEE7-4251-B996-8057E785338D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Application", "DocumentValidationAPI.Application\DocumentValidationAPI.Application.csproj", "{D8979567-DEE7-4251-B996-8057E785338D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Infrastructure", "..\DocumentValidationAPI.Infrastructure\DocumentValidationAPI.Infrastructure.csproj", "{5CCBFC36-CE4B-454B-9748-277715AE690A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Infrastructure", "DocumentValidationAPI.Infrastructure\DocumentValidationAPI.Infrastructure.csproj", "{5CCBFC36-CE4B-454B-9748-277715AE690A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentValidationAPI.Tests", "DocumentValidationAPI.Tests\DocumentValidationAPI.Tests.csproj", "{BE8AEEFE-F275-47FA-A903-3224F8C04468}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5CCBFC36-CE4B-454B-9748-277715AE690A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CCBFC36-CE4B-454B-9748-277715AE690A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CCBFC36-CE4B-454B-9748-277715AE690A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8AEEFE-F275-47FA-A903-3224F8C04468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8AEEFE-F275-47FA-A903-3224F8C04468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8AEEFE-F275-47FA-A903-3224F8C04468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8AEEFE-F275-47FA-A903-3224F8C04468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
