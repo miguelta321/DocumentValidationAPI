@@ -190,6 +190,26 @@ Cualquier solicitud que utilice valores diferentes a estos dará lugar a errores
 
 ---
 
+# 🧪 Colección de Postman para pruebas
+
+Para facilitar el proceso de pruebas y verificación de los endpoints expuestos por este servicio, se habilita un enlace de descarga directa a una colección de Postman previamente configurada.
+
+Esta colección incluye:
+
+- **Rutas de ejemplo para cada endpoint.**
+- **Variables de entorno sugeridas.**
+- **Ejemplos de peticiones con los parámetros necesarios.**
+- **Estructuras de respuesta esperadas.**
+
+Puedes descargar la colección desde el siguiente enlace:
+
+👉 [Descargar colección de Postman](https://drive.google.com/file/d/1KVmmek7DR6-jbF3ydbbC6lTzh_YjJFT-/view?usp=sharing)
+
+Una vez descargada, impórtala en tu Postman desde:
+File → Import → Upload Files.
+
+---
+
 # 🧪 9. Ejemplos de Requests
 
 Para facilidad de pruebas se puede cambiar el ambiente local por el desplegado.
