@@ -13,8 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Persistence\Migrations\" />
-    <Folder Include="Time\" />
-    <Folder Include="Security\" />
   </ItemGroup>
 
   <ItemGroup>
