@@ -8,7 +8,7 @@
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "DocumentValidationAPI::DocumentValidationAPI.LambdaEntryPoint::FunctionHandlerAsync",
+        "Handler": "DocumentValidationAPI.Api::DocumentValidationAPI.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnet8",
         "CodeUri": "",
         "MemorySize": 512,

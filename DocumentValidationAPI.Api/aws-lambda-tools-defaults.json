@@ -5,11 +5,13 @@
     "dotnet lambda help",
     "All the command line options for the Lambda command can be specified in this file."
   ],
-  "profile": "",
-  "region": "",
+  "profile": "default",
+  "region": "us-east-1",
   "configuration": "Release",
   "s3-prefix": "DocumentValidationAPI/",
   "template": "serverless.template",
   "template-parameters": "",
-  "msbuild-project-file": "DocumentValidationAPI.Api.csproj"
+  "msbuild-project-file": "DocumentValidationAPI.Api.csproj",
+  "s3-bucket": "document-companies",
+  "stack-name": "document-validation-api-dev"
 }
