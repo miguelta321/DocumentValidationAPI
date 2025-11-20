@@ -150,8 +150,13 @@ dotnet restore
 ```bash
 dotnet ef database update -p DocumentValidationAPI.Infrastructure -s DocumentValidationAPI.Api
 ```
+### 3. Ejecutar pruebas
 
-### 3. Ejecutar API
+```bash
+dotnet test
+```
+
+### 4. Ejecutar API
 ```bash
 dotnet run --project DocumentValidationAPI.Api
 ```
@@ -175,6 +180,38 @@ DocumentValidationAPI.Api::DocumentValidationAPI.Api.LambdaEntryPoint::FunctionH
 2. Seleccionar bucket para despliegue
 3. Configurar env vars
 4. Aplicar cambios en API Gateway
+
+---
+
+# ⚠️ Important Testing Warning
+
+Por motivos de pruebas, en la base de datos solo están disponibles los siguientes registros.:
+
+- **CompanyId:** `B8A4C5C9-7C2E-4C3A-9E2D-9D7D1F6F2E81`
+- **EntityId:** `F3E1A2B7-91C4-4D8A-8F3F-2DB1E6B4C92E`
+- **Entity Type:** `vehicle`
+
+Cualquier solicitud que utilice valores diferentes a estos dará lugar a errores de validación durante las pruebas en el entorno correspondiente.
+
+---
+
+# 🧪 Colección de Postman para pruebas
+
+Para facilitar el proceso de pruebas y verificación de los endpoints expuestos por este servicio, se habilita un enlace de descarga directa a una colección de Postman previamente configurada.
+
+Esta colección incluye:
+
+- **Rutas de ejemplo para cada endpoint.**
+- **Variables de entorno sugeridas.**
+- **Ejemplos de peticiones con los parámetros necesarios.**
+- **Estructuras de respuesta esperadas.**
+
+Puedes descargar la colección desde el siguiente enlace:
+
+👉 [Descargar colección de Postman](https://drive.google.com/file/d/1KVmmek7DR6-jbF3ydbbC6lTzh_YjJFT-/view?usp=sharing)
+
+Una vez descargada, impórtala en tu Postman desde:
+File → Import → Upload Files.
 
 ---
 
