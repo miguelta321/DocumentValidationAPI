@@ -1,3 +1,4 @@
+using DocumentValidationAPI.Api.Filters;
 using DocumentValidationAPI.Application.Configuration;
 using DocumentValidationAPI.Infrastructure.Configuration;
 using DotNetEnv;
@@ -11,7 +12,6 @@ public class Startup
 
     public Startup(IConfiguration configuration) => Configuration = configuration;
 
-    // Add services to the container
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddApplication();
@@ -19,7 +19,12 @@ public class Startup
 
         services.AddControllers(options =>
         {
+            options.Filters.Add<ModelValidationFilter>();
             options.Filters.Add<ValidationExceptionFilter>();
+        })
+        .ConfigureApiBehaviorOptions(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
         });
 
         // Swagger

@@ -8,12 +8,14 @@ public class ValidationExceptionFilter : IExceptionFilter
     {
         if (context.Exception is ValidationException ex)
         {
-            context.Result = new BadRequestObjectResult(new
+            var problem = new
             {
                 error = "ValidationError",
-                message = ex.Message
-            });
+                message = ex.Message,
+                errors = (object?)null
+            };
 
+            context.Result = new BadRequestObjectResult(problem);
             context.ExceptionHandled = true;
         }
     }

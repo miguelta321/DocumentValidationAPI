@@ -11,8 +11,8 @@ public static class ValidationStepExtensions
 
         return [.. steps.Select(s => new Steps
         {
-            Order = s.Order,
-            ApproverUserId = s.ApproverUserId
+            Order = s.Order!.Value,
+            ApproverUserId = s.ApproverUserId!.Value
         })];
     }
 }
