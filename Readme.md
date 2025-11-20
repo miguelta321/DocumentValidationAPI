@@ -208,7 +208,7 @@ Esta colección incluye:
 
 Puedes descargar la colección desde el siguiente enlace:
 
-👉 [Descargar colección de Postman](https://drive.google.com/file/d/1KVmmek7DR6-jbF3ydbbC6lTzh_YjJFT-/view?usp=sharing)
+👉 [Descargar colección de Postman](https://drive.google.com/file/d/1UHfNl-FJVeDiwK9GQeGPDetZyRl3oZZN/view?usp=sharing)
 
 Una vez descargada, impórtala en tu Postman desde:
 File → Import → Upload Files.
