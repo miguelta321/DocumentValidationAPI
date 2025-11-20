@@ -10,5 +10,6 @@
   "configuration": "Release",
   "s3-prefix": "DocumentValidationAPI/",
   "template": "serverless.template",
-  "template-parameters": ""
+  "template-parameters": "",
+  "msbuild-project-file": "DocumentValidationAPI.Api.csproj"
 }
