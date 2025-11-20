@@ -150,8 +150,13 @@ dotnet restore
 ```bash
 dotnet ef database update -p DocumentValidationAPI.Infrastructure -s DocumentValidationAPI.Api
 ```
+### 3. Ejecutar pruebas
 
-### 3. Ejecutar API
+```bash
+dotnet test
+```
+
+### 4. Ejecutar API
 ```bash
 dotnet run --project DocumentValidationAPI.Api
 ```
