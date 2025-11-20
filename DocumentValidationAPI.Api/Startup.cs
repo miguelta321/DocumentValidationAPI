@@ -1,8 +1,11 @@
 using DocumentValidationAPI.Api.Filters;
 using DocumentValidationAPI.Application.Configuration;
 using DocumentValidationAPI.Infrastructure.Configuration;
-using DotNetEnv;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
+using System.Text;
+
 
 namespace DocumentValidationAPI;
 
@@ -27,6 +30,30 @@ public class Startup
             options.SuppressModelStateInvalidFilter = true;
         });
 
+        var jwtSection = Configuration.GetSection("Jwt");
+        var key = Encoding.UTF8.GetBytes(jwtSection["Key"]!);
+
+        services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidateLifetime = true,
+
+                    ValidIssuer = jwtSection["Issuer"],
+                    ValidAudience = jwtSection["Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
+        services.AddAuthorization();
+
         // Swagger
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
@@ -43,14 +70,12 @@ public class Startup
     // Configure the HTTP request pipeline
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        var isRunningOnLambda = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("AWS_LAMBDA_FUNCTION_NAME"));
+        var isLambda = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("AWS_LAMBDA_FUNCTION_NAME"));
 
         if (env.IsDevelopment())
-        {
             app.UseDeveloperExceptionPage();
-        }
 
-        if (!isRunningOnLambda)
+        if (!isLambda)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -63,28 +88,22 @@ public class Startup
         app.UseHttpsRedirection();
 
         app.UseRouting();
-
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
 
-            if (!isRunningOnLambda)
+            if (!isLambda)
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/", c =>
                 {
-                    context.Response.Redirect("/swagger");
-                    await Task.CompletedTask;
-                });
-            }
-            else
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Welcome to running ASP.NET Core on AWS Lambda");
+                    c.Response.Redirect("/swagger");
+                    return Task.CompletedTask;
                 });
             }
         });
     }
+
 }

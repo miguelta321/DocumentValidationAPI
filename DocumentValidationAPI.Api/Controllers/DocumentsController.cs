@@ -2,6 +2,7 @@
 using DocumentValidationAPI.Api.Contracts.Responses;
 using DocumentValidationAPI.Api.Mappers;
 using DocumentValidationAPI.Application.Abstractions.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocumentValidationAPI.Api.Controllers
@@ -28,6 +29,7 @@ namespace DocumentValidationAPI.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Upload([FromBody] UploadDocumentRequest request)
         {
             var command = request.ToUploadDocumentCommand();
@@ -43,6 +45,7 @@ namespace DocumentValidationAPI.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet("{documentId:guid}/download")]
         public async Task<IActionResult> Download(Guid documentId)
         {
@@ -52,6 +55,7 @@ namespace DocumentValidationAPI.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpPost("{documentId:guid}/approve")]
         public async Task<IActionResult> Approve(Guid documentId, [FromBody] ChangeStateDocumentRequest request)
         {
@@ -66,6 +70,7 @@ namespace DocumentValidationAPI.Api.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpPost("{documentId:guid}/reject")]
         public async Task<IActionResult> Reject(Guid documentId, [FromBody] ChangeStateDocumentRequest request)
         {

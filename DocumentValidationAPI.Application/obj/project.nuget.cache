@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bw63qT71280=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\POWER\\source\\repos\\DocumentValidationAPI\\DocumentValidationAPI.Application\\DocumentValidationAPI.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\POWER\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.11\\microsoft.extensions.dependencyinjection.9.0.11.nupkg.sha512",
+    "C:\\Users\\POWER\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.11\\microsoft.extensions.dependencyinjection.abstractions.9.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
